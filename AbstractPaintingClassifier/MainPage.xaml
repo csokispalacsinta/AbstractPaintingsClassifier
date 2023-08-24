@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AbstractPaintingClassifier.MainPage"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core">
+    <Grid>
+        <BoxView x:Name="bdGradient" Scale="4" AnchorX="1" AnchorY="0">
+            <BoxView.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="#767676" Offset="0.3"/>
+                    <GradientStop Color="#6c6c6c" Offset="0.6" />
+                    <GradientStop Color="#5c5c5c" Offset="1" />
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
+        
+        <StackLayout BackgroundColor="Transparent">
+
+            <Grid ColumnSpacing="15">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition  Width="*" />
+                    <ColumnDefinition  Width="*" />
+                    <ColumnDefinition  Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+
+
+                <Frame BackgroundColor="#ecf0f1" BorderColor="#ecf0f1"  Padding="10" CornerRadius="30" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4">
+                    <Label Text="Classify an abstract painting!" HorizontalTextAlignment="Center" TextColor="Black" FontSize="36" FontAttributes="Bold"/>
+                </Frame>
+
+                <Button Text="Pick Image" Clicked="Pick_Image" Grid.Row="2" Grid.Column="1"
+                        android:Button.UseDefaultShadow="true"
+                BackgroundColor="#fb7c24" BorderColor="#fb7c24" BorderWidth="2" TextColor="Black"
+                FontSize="20" FontAttributes="Bold" CornerRadius="20"/>
+
+                <Button Text="Take Image" Clicked="Take_Image" Grid.Row="2" Grid.Column="2"
+                        android:Button.UseDefaultShadow="true"
+                BackgroundColor="#fcc48c" BorderColor="#fcc48c" BorderWidth="2" TextColor="Black" 
+                FontSize="20" FontAttributes="Bold" CornerRadius="20" />
+            </Grid>
+
+            <StackLayout Padding="40">
+                <Frame CornerRadius="20" Padding="0" IsClippedToBounds="True">
+                    <Image x:Name="resultImage" HorizontalOptions="Center" VerticalOptions="Center" />
+                </Frame>
+            </StackLayout>
+
+            <Label x:Name="style" FontSize="28" HorizontalTextAlignment="Center" TextColor="#ecf0f1" FontAttributes="Bold"/>
+        </StackLayout>
+    </Grid>
+
+</ContentPage>

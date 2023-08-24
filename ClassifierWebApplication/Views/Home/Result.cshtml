@@ -1,0 +1,16 @@
+﻿@model Painting
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <img src="/Images/@Model.FileName" class="img-fluid shadow" alt="...">
+
+    <p></p>
+
+    <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+        <h3>@Model.Style</h3>
+    </div>
+
+    <a href="/home/classifier" class="btn btn-outline-primary">Try another one!</a>
+</div>
